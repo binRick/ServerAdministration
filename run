@@ -2,15 +2,20 @@
 export USER="nobody"
 export LOGIN="rick"; 
 export PASS="rick"; 
-export PORT=7400
-export MONGODB=sadmin55
+export PORT=7408
+export MONGODB=db100
 #${RANDOM}
 #export COMMAND="export PORT=4001; cd ~ && rm -rf ServerAdministration; git clone https://github.com/binRick/ServerAdministration.git && cd ServerAdministration && npm install && npm start"; 
-#export COMMAND1="ls -al /etc"
-#export COMMAND2="ls -al /"
+export COMMAND1="dstat"
+export COMMAND2="dstat -alp"
 #ls -al --color"
 #git clone https://github.com/binRick/ServerAdministration.git"
 # && cd ServerAdministration && npm install && npm start"; 
+
+if [ ! -d "node_modules" ]
+then
+	npm install
+fi
 if [  $(whoami) == "root" ]
 then
 	exec setuidgid ${USER} npm start 2>&1
