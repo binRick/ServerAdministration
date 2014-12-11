@@ -8,7 +8,8 @@ module.exports = {
 
     //created when no commands
     firstCommands: [
-        {command: process.env.COMMAND || 'echo Welcome to server admin!'}
+        {command: process.env.COMMAND1 || 'echo command one'},
+        {command: process.env.COMMAND2 || 'echo command two'},
     ],
 
     //created when no user
