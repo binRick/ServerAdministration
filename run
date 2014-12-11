@@ -11,4 +11,9 @@ export MONGODB=sadmin55
 #ls -al --color"
 #git clone https://github.com/binRick/ServerAdministration.git"
 # && cd ServerAdministration && npm install && npm start"; 
-exec setuidgid ${USER} npm start 2>&1
+if [  $(whoami) == "root" ]
+then
+	exec setuidgid ${USER} npm start 2>&1
+else
+	exec npm start 2>&1
+fi
